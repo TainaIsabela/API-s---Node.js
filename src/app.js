@@ -1,8 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const moongose = require('mongoose');
 const app = express();
 const router = express.Router();
 
+moongose.connect('mongodb://localhost:27017/node-crud-api', {
+    useUnifiedTopology: true, useNewUrlParser: true 
+});
 //Carrega as rotas
 const indexRoute = require('./routes/index-route');
 const productRoute = require('./routes/product-route');
