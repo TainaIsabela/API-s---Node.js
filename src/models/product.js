@@ -14,10 +14,7 @@ const schema = new Schema({
         index: true,
         unique: true
     },
-    // description: {
-    //     type: String,
-    //     required: true
-    // },
+    
     price: {
         type: Number,
         required: true
@@ -31,11 +28,7 @@ const schema = new Schema({
         type: String,
         required: true
     }],
-    // image: {
-    //     type: String,
-    //     required: true,
-    //     trim: true
-    // }
+    
 });
 
 module.exports = moongose.model('Product', schema);
