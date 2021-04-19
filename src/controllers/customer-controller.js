@@ -61,7 +61,8 @@ exports.authenticate = async (req, res, next) => {
         const token = await authService.generateToken({
             id: customer._id,
             email: customer.email,
-            name: customer.name
+            name: customer.name,
+            roles: customer.roles
         });
 
         res.status(201).send({
@@ -85,7 +86,6 @@ exports.refreshToken = async(req, res, next) => {
     try {
         const token = req.body.token || req.query.token || req.headers['x-access-token'];
         const data = await authService.decodeToken(token);
-
         const customer = await repository.getById(data.id);
 
         if (!customer) {
