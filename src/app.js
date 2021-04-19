@@ -10,6 +10,7 @@ moongose.connect('mongodb://localhost:27017/node-crud-api', {
 
 const Product = require('./models/product');
 const Customer = require('./models/customer');
+const Order = require('./models/order');
 //Carrega as rotas
 const indexRoute = require('./routes/index-route');
 const productRoute = require('./routes/product-route');
