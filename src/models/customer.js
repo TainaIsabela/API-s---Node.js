@@ -1,11 +1,10 @@
-const moongose = require('mongoose');
-const Schema = moongose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const schema = new Schema({
     name: {
         type: String,
         required: true,
-        trim: true
     },
     email: {
         type: String,
@@ -19,4 +18,4 @@ const schema = new Schema({
     }
 });
 
-module.exports = moongose.model('Customer', schema);
+module.exports = mongoose.model('Customer', schema);
